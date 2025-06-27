@@ -1,33 +1,110 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { createGame } from 'odyc'
+
+
+const game = createGame({
+  colors: [
+		'#212529', // 0
+		'#f8f9fa', // 1
+		'#ced4da', // 2
+		'#228be6', // 3
+		'#fa5252', // 4
+		'#fcc419', // 5
+		'#ffd8a8', // 6
+		'#40c057', // 7
+		'#f06595', // 8
+		'#a52f01', // 9
+		'#fcc2d7', // a
+		'#0000ff', // b
+		'#ffff00', // c
+    '#e64980', // d
+    '#ae3ec9', // e
+    '#e599f7', // f
+    '#ffff00' // g
+
+		// and so on...
+	],
+  messageBackground: 0,
+	messageColor: 1,
+	dialogBackground: 0,
+	dialogColor: 1,
+	dialogBorder: 1,
+	dialogSpeed: 'NORMAL',
+	screenWidth: 12,
+	screenHeight: 12,
+	cellWidth: 16,
+	cellHeight: 18,
+	background: 1,
+	volume: 0.5,
+  player: {
+    sprite: `
+			....000000000...
+			...09999999990..
+			...099999999900.
+			..09999999999990
+			..09999999999990
+			..09969676667690
+			..09969676667690
+			.099999aa666aa90
+			.099999aa666aa90
+			.099911dd888100.
+			..09911d888810..
+			...000dd88880...
+			.....0dd88880...
+			.....0ddff880...
+			.....0ddee880...
+			.....0d888880...
+			.....09900990...
+			.....00000000...
+			`,
+    position: [1, 1]
+  },
+  templates: {
+    x: {
+      sprite: 2
+    }
+  },
+  map: `
+	.............................
+	.....x.......................
+	.....x.......................
+	.....x.......................
+	.....x.......................
+	.....x.......................
+	.....x.......................
+	.....x.......................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+	.............................
+			`
+})
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+       {game.render()}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  
     </>
   )
 }
