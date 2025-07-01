@@ -60,13 +60,10 @@ export function play(levelIndex) {
 				sprite: sprites.love,
 				dialog: '',
 				async onCollide(target) {
-					await game.openDialog('Gracias por encontrarme mi princesa|por traer luz a mis dias|por hacerme muy feliz|por ser mi amorcita|estoy sumamente orgulloso de ti y te prometo que siempre estare a tu lado|<4>te amo<4>')
+					await game.openDialog('Gracias por encontrarme, mi princesa|por traer luz a mis días|por hacerme muy feliz|por ser mi amorcita|estoy sumamente orgulloso de ti y te prometo que siempre estaré a tu lado|<4>te amo<4>')
 					await game.end('La princesita y el amorcito vivieron felices para siempre junto a su gatito', 'Gracias por jugar :3')
 					play(0)
 				}
-				// onEnter() {
-					
-				// },
 			},
 
 		},

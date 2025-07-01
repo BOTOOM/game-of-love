@@ -4,8 +4,20 @@ import { levels, sprites } from './assets'
 import { play } from './game'
 
 const intro = createGame()
-// await intro.openMessage('~Vroom~')
-play(8)
+await intro.openMessage(`** Game of Love **
+
+
+ una prequeña aventura
+
+
+
+         by Edwar`,`Érase una vez una princesita
+        
+ a la cual se le perdió su amorcito`,
+`Por lo cual la princesita ha decidido buscarlo
+
+para poder estar juntos`,)
+play(0)
 
 
 // const game = createGame({
